@@ -1,11 +1,19 @@
+# C projects
 *.o
+*.d
 *.a
+*.so
 a.out
+.dep
+.obj
+
+# PHP projects
+vendor
+cache/*
+
+# Netbeans
 nbproject
-libft/.git
+
+# Web / JS
 node_modules
-.dep.inc
-.kateproject
-.kdev4
-.directory
-.gitconfig
+bower_components
