@@ -1,0 +1,7 @@
+{
+    "require": {
+        "phpunit/phpunit": "6.*",
+        "asm89/twig-lint": "^1.0",
+        "friendsofphp/php-cs-fixer": "^1.12"
+    }
+}
