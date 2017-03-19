@@ -1,9 +1,9 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
-	url = ~/.emacs.d
+	url = https://github.com/jlagneau/.emacs.d.git
 [submodule "42init"]
 	path = .bin/42init
-	url = ~/.bin/42init
+	url = https://github.com/jlagneau/42init.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = ./.oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
