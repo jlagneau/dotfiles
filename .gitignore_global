@@ -1,0 +1,11 @@
+*.o
+*.a
+a.out
+nbproject
+libft/.git
+node_modules
+.dep.inc
+.kateproject
+.kdev4
+.directory
+.gitconfig
