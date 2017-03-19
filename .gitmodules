@@ -1,3 +1,6 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = /home/jlagneau/.emacs.d
+[submodule "42init"]
+	path = 42init
+	url = /home/jlagneau/.bin/42init
