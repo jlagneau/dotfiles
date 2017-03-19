@@ -4,3 +4,6 @@
 [submodule "42init"]
 	path = .bin/42init
 	url = ~/.bin/42init
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = ./.oh-my-zsh
