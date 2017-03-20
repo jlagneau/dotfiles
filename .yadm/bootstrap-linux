@@ -9,13 +9,11 @@ yadm submodule update --recursive --init
 
 # Install emacs packages
 echo -e "\033[32mUpdate Emacs repository\033[0m"
-cd ./.emacs.d
 ./.emacs.d/install.sh
-cd ~
 
-# Source the zsh config
-echo -e "\033[32mSource the ZSH config\033[0m"
-source ~/.zshrc
+echo -e "\033[33mPlease refresh your configuration. Either:\033[0m"
+echo -e "\033[33m- source ~/.zshrc\033[0m"
+echo -e "\033[33m- reopen your terminal\033[0m"
 
 # Return to the original directory
 popd
