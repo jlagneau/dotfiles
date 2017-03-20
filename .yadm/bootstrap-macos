@@ -13,8 +13,7 @@ brew cask install emacs
 
 # Install fonts
 echo -e "\033[32mInstall fonts\033[0m"
-rm -rf ~/Library/Fonts
-ln -s .fonts ~/Library/Fonts
+cp ~/.fonts/* ~/Library/Fonts/
 
 # Install emacs packages
 echo -e "\033[32mInstall Emacs packages\033[0m"
