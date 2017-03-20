@@ -9,7 +9,15 @@ yadm submodule update --recursive --init > /dev/null
 
 # Install basic packages
 echo -e "\033[32mInstall packages\033[0m"
-brew cask install emacs > /dev/null
+function install() {
+  if [[ "$2" ls --versions "$1" > /dev/null ]]; then
+    "$2" install "$1" > /dev/null
+  fi
+}
+
+install wget "brew"
+install htop "brew"
+install emacs "brew cask"
 
 # Install fonts
 echo -e "\033[32mInstall fonts\033[0m"
