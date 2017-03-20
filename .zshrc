@@ -52,12 +52,12 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 if [[ $OSTYPE == linux* ]]; then
-  OSPLUGIN='archlinux systemd'
+  osplugin='archlinux systemd'
 elif [[ $OSTYPE == darwin* ]]; then
-  OSPLUGIN='osx brew cask'
+  osplugin='osx brew cask'
 fi
 
-plugins=(git git-flow-avh colored-man cp atom symfony2 composer ruby rails opam nvm bower npm $OSPLUGIN)
+plugins=(git git-flow-avh colored-man cp atom symfony2 composer nvm bower npm $osplugin)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,10 +67,11 @@ export MANPATH="/usr/local/man:$MANPATH"
 export TERM="xterm-256color"
 export MAIL="jlagneau@student.42.fr"
 export PAGER="less"
-export PATH=$HOME/.bin:/usr/local/bin:/usr/bin:$PATH
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+
+if [[ $OSTYPE == darwin* ]]; then
+  ospath=$HOME/.brew/bin:
 fi
+export PATH=$HOME/.bin:/usr/local/bin:/usr/bin:$ospath$PATH
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
