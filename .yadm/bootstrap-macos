@@ -7,6 +7,15 @@ pushd "$HOME"
 echo -e "\033[32mInit submodules\033[0m"
 yadm submodule update --recursive --init
 
+# Install basic packages
+brew cask install emacs
+
+# Install emacs packages
+echo -e "\033[32mUpdate Emacs repository\033[0m"
+cd ./.emacs.d
+./.emacs.d/install.sh
+cd ~
+
 # Source the zsh config
 echo -e "\033[32mSource the ZSH config\033[0m"
 source ~/.zshrc

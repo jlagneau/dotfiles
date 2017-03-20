@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Because Git submodule commands cannot operate without a work tree, they must
+# be run from within $HOME (assuming this is the root of your dotfiles)
+pushd "$HOME"
+
+echo -e "\033[32mInit submodules\033[0m"
+yadm submodule update --recursive --init
+
+# Install emacs packages
+echo -e "\033[32mUpdate Emacs repository\033[0m"
+cd ./.emacs.d
+./.emacs.d/install.sh
+cd ~
+
+# Source the zsh config
+echo -e "\033[32mSource the ZSH config\033[0m"
+source ~/.zshrc
+
+# Return to the original directory
+popd
