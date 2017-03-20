@@ -70,6 +70,8 @@ export PAGER="less"
 
 if [[ $OSTYPE == darwin* ]]; then
   ospath=$HOME/.brew/bin:
+  export HOMEBREW_CACHE=/tmp/mycache
+  export HOMEBREW_TEMP=/tmp/mytemp
 fi
 export PATH=$HOME/.bin:/usr/local/bin:/usr/bin:$ospath$PATH
 export NVM_DIR=$HOME/.nvm
