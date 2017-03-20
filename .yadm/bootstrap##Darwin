@@ -13,14 +13,14 @@ brew cask install emacs > /dev/null
 
 # Install fonts
 echo -e "\033[32mInstall fonts\033[0m"
-if [[ -d "$HOME/.fonts" ]]; then
-  cp "$HOME/.fonts/*" "$HOME/Library/Fonts/"
+if [[ -d "$HOME"/.fonts ]]; then
+  cp "$HOME"/.fonts/* "$HOME"/Library/Fonts/
 fi
 
 # Install emacs packages
 echo -e "\033[32mInstall Emacs packages\033[0m"
-if [[ -d "$HOME/.emacs.d" ]]; then
-  "$HOME/.emacs.d/install.sh" > /dev/null
+if [[ -d "$HOME"/.emacs.d ]]; then
+  "$HOME"/.emacs.d/install.sh > /dev/null
 fi
 
 echo -e "\033[33mPlease refresh your configuration. Either:\033[0m"
@@ -28,4 +28,4 @@ echo -e "\033[33m- source ~/.zshrc\033[0m"
 echo -e "\033[33m- reopen your terminal\033[0m"
 
 # Return to the original directory
-popd
+popd > /dev/null
