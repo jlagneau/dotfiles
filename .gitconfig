@@ -10,6 +10,7 @@
 
 [alias]
 	pull = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
-    clone = "'!git clone --recursive \"$@\""
+	clone = "'!git clone --recursive \"$@\""
+
 [push]
 	default = simple
