@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+# Install basic packages
+echo -e "\033[32mInstall packages\033[0m"
+
+function install() {
+  if [[ yaourt -Qs "$1" > /dev/null ]]; then
+    yaourt -S --no-confirm "$1" > /dev/null
+  fi
+}
+
+install gpg
+install wget
+install htop
+install emacs

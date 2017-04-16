@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+# Install basic packages
+echo -e "\033[32mInstall packages\033[0m"
+
+function install() {
+  if [[ brew ls --versions "$1" > /dev/null ]]; then
+    brew install "$1" > /dev/null
+  fi
+}
+
+# Make tmp directories for brew
+mkdir -p /tmp/mycache /tmp/mytemp
+
+install gpg
+install wget
+install htop
+
+# Install fonts
+echo -e "\033[32mInstall fonts\033[0m"
+if [[ -d "$HOME"/.fonts ]]; then
+  cp "$HOME"/.fonts/* "$HOME"/Library/Fonts/
+fi
