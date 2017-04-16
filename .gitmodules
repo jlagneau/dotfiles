@@ -1,15 +1,15 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
-	url = https://github.com/jlagneau/.emacs.d.git
+	url = git@github.com:jlagneau/.emacs.d.git
 [submodule ".config/42init"]
 	path = .config/42init
-	url = https://github.com/jlagneau/42init.git
+	url = git@github.com:jlagneau/42init.git
 [submodule ".config/gdbinit"]
 	path = .config/gdbinit
-	url = https://github.com/gdbinit/Gdbinit.git
+	url = git@github.com:gdbinit/Gdbinit.git
 [submodule ".config/oh-my-zsh"]
 	path = .config/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+	url = git@github.com:robbyrussell/oh-my-zsh.git
 [submodule ".config/gitsmtost"]
 	path = .config/gitsmtost
 	url = git@github.com:jlagneau/git-submodules-to-subtree.git
