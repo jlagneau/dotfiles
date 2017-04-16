@@ -10,3 +10,6 @@
 [submodule ".config/oh-my-zsh"]
 	path = .config/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".config/gitsmtost"]
+	path = .config/gitsmtost
+	url = git@github.com:jlagneau/git-submodules-to-subtree.git
