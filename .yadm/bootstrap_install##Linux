@@ -3,13 +3,8 @@
 # Install basic packages
 echo -e "\033[32mInstall packages\033[0m"
 
-function install() {
-  if [[ yaourt -Qs "$1" > /dev/null ]]; then
-    yaourt -S --no-confirm "$1" > /dev/null
-  fi
-}
-
-install gpg
-install wget
-install htop
-install emacs
+which gpg   > /dev/null || yaourt -S --no-confirm gpg
+which wget  > /dev/null || yaourt -S --no-confirm wget
+which htop  > /dev/null || yaourt -S --no-confirm htop
+which r2    > /dev/null || yaourt -S --no-confirm radare2
+which emacs > /dev/null || yaourt -S --no-confirm emacs
