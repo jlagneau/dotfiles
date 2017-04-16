@@ -1,3 +1,14 @@
+# OS specific variables and exports
+if [[ $OSTYPE == linux* ]]; then
+  osplugin='archlinux systemd'
+  ospath=$HOME/.bin
+elif [[ $OSTYPE == darwin* ]]; then
+  osplugin='osx brew'
+  ospath=$HOME/.bin:$HOME/.brew/bin
+  export HOMEBREW_CACHE=/tmp/mycache
+  export HOMEBREW_TEMP=/tmp/mytemp
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -42,7 +53,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/.config/oh-my-zsh-custom
@@ -51,13 +62,8 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-if [[ $OSTYPE == linux* ]]; then
-  osplugin='archlinux systemd'
-elif [[ $OSTYPE == darwin* ]]; then
-  osplugin='osx brew cask'
-fi
 
-plugins=(git git-flow-avh colored-man cp atom symfony2 composer nvm bower npm $osplugin)
+plugins=(git colored-man cp symfony2 composer $osplugin)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,13 +73,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export TERM="xterm-256color"
 export MAIL="jlagneau@student.42.fr"
 export PAGER="less"
-
-if [[ $OSTYPE == darwin* ]]; then
-  ospath=$HOME/.brew/bin:
-  export HOMEBREW_CACHE=/tmp/mycache
-  export HOMEBREW_TEMP=/tmp/mytemp
-fi
-export PATH=$HOME/.bin:/usr/local/bin:/usr/bin:$ospath$PATH
+export PATH=$ospath:$PATH
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -101,4 +101,5 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="emacs -nw ~/.zshrc"
 alias gdb="gdb -q"
