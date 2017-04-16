@@ -1,2 +1,2 @@
-~/.ssh/*_rsa
-~/.ssh/config
+.ssh/*_rsa
+.ssh/config
