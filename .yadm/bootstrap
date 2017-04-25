@@ -4,7 +4,11 @@
 # be run from within $HOME (assuming this is the root of your dotfiles)
 pushd "$HOME" > /dev/null
 
+# Install required software and dependencies
 source "$HOME"/.yadm/bootstrap_install
+
+# Decrypt files
+yadm decrypt
 
 echo -e "\033[32mInit submodules\033[0m"
 yadm submodule update --recursive --init > /dev/null

@@ -63,7 +63,7 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh-custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git colored-man cp symfony2 composer $osplugin)
+plugins=(git colored-man-pages cp symfony2 composer $osplugin)
 
 source $ZSH/oh-my-zsh.sh
 

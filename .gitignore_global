@@ -1,19 +1,16 @@
-# C projects
+# C / C++ projects
 *.o
 *.d
 *.a
 *.so
 a.out
-.dep
-.obj
 
-# PHP projects
-vendor
-cache/*
-
-# Netbeans
+# IDE
+.dir-locals.el
 nbproject
 
-# Web / JS
+# Web
 node_modules
 bower_components
+vendor
+cache/*
