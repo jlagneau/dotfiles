@@ -1,9 +1,16 @@
 # OS specific variables and exports
 if [[ $OSTYPE == linux* ]]; then
-  osplugin='archlinux systemd'
-  ospath=$HOME/.bin
+  distro=$(uname -n)
+  if [[ $distro == gentoo* ]]; then
+    osplugin=(systemd gentoo)
+  elif [[ $distro == musl* ]]; then
+    osplugin=(gentoo)
+  else
+    osplugin=(systemd archlinux)
+  fi
+  ospath=$HOME/.bin:/usr/sbin
 elif [[ $OSTYPE == darwin* ]]; then
-  osplugin='osx brew'
+  osplugin=(osx brew)
   ospath=$HOME/.bin:$HOME/.brew/bin
   export HOMEBREW_CACHE=/tmp/mycache
   export HOMEBREW_TEMP=/tmp/mytemp
@@ -69,6 +76,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export OMZSH_PLUGINS=$plugins
 export MANPATH="/usr/local/man:$MANPATH"
 export TERM="xterm-256color"
 export MAIL="jlagneau@student.42.fr"
