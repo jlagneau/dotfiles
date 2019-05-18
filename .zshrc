@@ -1,19 +1,18 @@
+# Config for "dumb" terminal
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 # OS specific variables and exports
 if [[ $OSTYPE == linux* ]]; then
-  distro=$(uname -n)
-  if [[ $distro == gentoo* ]]; then
-    osplugin=(systemd gentoo)
-  elif [[ $distro == musl* ]]; then
-    osplugin=(gentoo)
-  else
-    osplugin=(systemd archlinux)
-  fi
-  ospath=$HOME/.bin:/usr/sbin
+    distro=$(uname -n)
+    if [[ $distro == gentoo* ]]; then
+        osplugin=(systemd gentoo)
+    elif [[ $distro == musl* ]]; then
+        osplugin=(gentoo)
+    else
+        osplugin=(systemd archlinux pacbuild)
+    fi
 elif [[ $OSTYPE == darwin* ]]; then
-  osplugin=(osx brew)
-  ospath=$HOME/.bin:$HOME/.brew/bin
-  export HOMEBREW_CACHE=/tmp/mycache
-  export HOMEBREW_TEMP=/tmp/mytemp
+    osplugin=(osx brew)
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -70,36 +69,11 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh-custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git colored-man-pages cp symfony2 composer $osplugin zsh-syntax-highlighting)
+plugins=(cp colored-man-pages composer docker docker-compose emoji git github git-flow-avh httpie symfony2 zsh-syntax-highlighting $osplugin)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export OMZSH_PLUGINS=$plugins
-export MANPATH="/usr/local/man:$MANPATH"
-export TERM="xterm-256color"
-export MAIL="jlagneau@student.42.fr"
-export PAGER="less"
-export PATH=$ospath:$PATH
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='emacs -nw'
-else
-  export EDITOR='emacs'
-fi
-
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -111,3 +85,4 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshconfig="emacs -nw ~/.zshrc"
 alias gdb="gdb -q"
+export OMZSH_PLUGINS="$plugins"

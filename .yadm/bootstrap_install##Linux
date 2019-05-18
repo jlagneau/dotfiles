@@ -3,8 +3,8 @@
 # Install basic packages
 echo -e "\033[32mInstall packages\033[0m"
 
-which gpg   > /dev/null || yaourt -S --no-confirm gpg
-which wget  > /dev/null || yaourt -S --no-confirm wget
-which htop  > /dev/null || yaourt -S --no-confirm htop
-which r2    > /dev/null || yaourt -S --no-confirm radare2
-which emacs > /dev/null || yaourt -S --no-confirm emacs
+which gpg   > /dev/null || yay -S --no-confirm gpg
+which wget  > /dev/null || yay -S --no-confirm wget
+which htop  > /dev/null || yay -S --no-confirm htop
+which r2    > /dev/null || yay -S --no-confirm radare2
+which emacs > /dev/null || yay -S --no-confirm emacs
