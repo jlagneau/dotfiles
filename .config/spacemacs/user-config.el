@@ -22,8 +22,16 @@ you should place your code here."
     :config
     (solaire-global-mode +1))
 
+  ;; Hide mode line for specific buffers
+  (use-package hide-mode-line
+    :hook
+    ((fundamental-mode spacemacs-buffer-mode treemacs-mode) . hide-mode-line-mode))
+
   ;; Hide fringe arrows
   (setq-default fringe-indicator-alist (assq-delete-all 'truncation fringe-indicator-alist))
+
+  ;; treemacs icons size
+  (treemacs-resize-icons 18)
 
   ;; Compilation buffer.
   (require 'ansi-color)
