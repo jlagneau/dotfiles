@@ -1,7 +1,0 @@
-set $SETCOLOR1STLINE = 1
-set $SHOWSTACK = 1
-set $SHOWDATAWIN = 1
-set $BLACK = 7
-set $WHITE = 0
-set $COLOR_REGVAL = $CYAN
-
