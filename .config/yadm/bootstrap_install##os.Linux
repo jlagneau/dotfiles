@@ -1,14 +1,12 @@
 #!/bin/zsh
 
 # Install basic packages
-echo -e "\033[32mInstall packages\033[0m"
-
-which gpg          > /dev/null || yay -S --no-confirm gpg
-which wget         > /dev/null || yay -S --no-confirm wget
-which htop         > /dev/null || yay -S --no-confirm htop
-which gotop        > /dev/null || yay -S --no-confirm gotop
-which r2           > /dev/null || yay -S --no-confirm radare2
-which emacs        > /dev/null || yay -S --no-confirm emacs
-which lsd          > /dev/null || yay -S --no-confirm lsd nerd-fonts-complete
-which ccls         > /dev/null || yay -S --no-confirm ccls
-which intelephense > /dev/null || sudo npm i intelephense -g 
+which gpg          > /dev/null || yay -S --noconfirm --quiet gpg
+which wget         > /dev/null || yay -S --noconfirm --quiet wget
+which htop         > /dev/null || yay -S --noconfirm --quiet htop
+which gotop        > /dev/null || yay -S --noconfirm --quiet gotop
+which r2           > /dev/null || yay -S --noconfirm --quiet radare2
+which emacs        > /dev/null || yay -S --noconfirm --quiet emacs
+which lsd          > /dev/null || yay -S --noconfirm --quiet lsd nerd-fonts-complete
+which clang        > /dev/null || yay -S --noconfirm --quiet clang
+which intelephense > /dev/null || yay -S --noconfirm --quiet nodejs-intelephense

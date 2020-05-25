@@ -4,8 +4,12 @@
 # be run from within $HOME (assuming this is the root of your dotfiles)
 pushd "$HOME" > /dev/null
 
+# Yadm generate alternate files
+yadm alt > /dev/null
+
 # Install required software and dependencies
-source "$HOME"/.yadm/bootstrap_install
+echo -e "\033[32mInstall required softwares\033[0m"
+source "$XDG_CONFIG_HOME"/yadm/bootstrap_install
 
 # Sparse checkout.
 yadm gitconfig core.sparseCheckout true
@@ -16,7 +20,10 @@ cat << EOF > "$HOME/.config/yadm/repo.git/info/sparse-checkout"
 !LICENSE
 EOF
 
+yadm checkout --quiet
+
 # Decrypt files
+echo -e "\033[32mDecrypt files\033[0m"
 yadm decrypt > /dev/null
 
 echo -e "\033[32mInit submodules\033[0m"
