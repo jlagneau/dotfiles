@@ -14,10 +14,12 @@ XDG environement variable should be set.
 export KWIN_DRM_USE_EGL_STREAMS=1
 
 # XDG
+export XDG_BIN_HOME="${HOME}/.local/bin"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_RUNTIME_DIR="/run/user/${id -u $USER}"
 export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
