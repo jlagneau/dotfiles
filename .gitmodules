@@ -13,9 +13,6 @@
 [submodule ".config/oh-my-zsh-custom/plugins/zsh-syntax-highlighting"]
 	path = .config/oh-my-zsh-custom/plugins/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
-[submodule ".config/spacemacs"]
-	path = .config/spacemacs
-	url = git@github.com:jlagneau/spacemacs.git
 [submodule ".config/emacs"]
 	path = .config/emacs
 	url = git@github.com:syl20bnr/spacemacs.git
