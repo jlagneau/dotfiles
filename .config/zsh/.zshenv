@@ -1,7 +1,7 @@
 # base configuration
 export PATH="$XDG_BIN_HOME:$HOME/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 export LANG=en_US.UTF-8
-export EDITOR=emacs -nw
+export EDITOR="emacs -nw"
 export PAGER=less
 export TERM=xterm-256color
 
