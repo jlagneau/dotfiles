@@ -19,3 +19,4 @@
 [submodule ".config/emacs"]
 	path = .config/emacs
 	url = git@github.com:syl20bnr/spacemacs.git
+	branch = develop
