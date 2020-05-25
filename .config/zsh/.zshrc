@@ -61,6 +61,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export OMZSH_PLUGINS="$plugins"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -68,7 +70,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshconfig="emacs -nw $XDG_CONFIG_HOME/zsh/.zshrc"
-alias zshrefresh="source $XDG_CONFIG_HOME/zsh/.zshrc /etc/zsh/zshenv"
+alias zshrefresh="source $XDG_CONFIG_HOME/zsh/.zshrc $XDG_CONFIG_HOME/zsh/.zshenv /etc/zsh/zshenv"
 alias gdb="gdb -q -nh -x $XDG_CONFIG_HOME/gdb/local"
 alias ls="lsd"
 alias lt="ls --tree"
@@ -79,5 +81,3 @@ alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias tmn="tmux new -t"
 alias tml="tmux list-sessions"
 alias tma="tmux attach -d -t"
-
-export OMZSH_PLUGINS="$plugins"
