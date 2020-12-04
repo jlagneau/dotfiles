@@ -57,7 +57,7 @@ ZSH_CUSTOM=$XDG_CONFIG_HOME/oh-my-zsh-custom
 plugins=(archlinux cp colored-man-pages composer docker docker-compose emoji git github git-flow-avh httpie ssh-agent symfony2 systemd zsh-syntax-highlighting)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities github_rsa home_ed25512
+zstyle :omz:plugins:ssh-agent identities github_rsa home_ed25519
 zstyle :omz:plugins:ssh-agent lifetime 8h
 
 source $ZSH/oh-my-zsh.sh
@@ -72,7 +72,7 @@ export OMZSH_PLUGINS="$plugins"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-if [ -f ~/.zsh/zshalias ]; then
+if [ -f $XDG_CONFIG_HOME/zsh/zshalias ]; then
     source $XDG_CONFIG_HOME/zsh/zshalias
 else
     print "$XDG_CONFIG_HOME/zsh/zshalias: File not found."
