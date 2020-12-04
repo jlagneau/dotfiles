@@ -1,0 +1,11 @@
+# C/C++ projects
+*.o
+*.a
+*.so
+*.lib
+*.dll
+a.out
+
+# IDE local files
+.dir-locals.el
+.vs
