@@ -1,5 +1,5 @@
 # Config for "dumb" terminal
-# [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -54,8 +54,11 @@ ZSH_CUSTOM=$XDG_CONFIG_HOME/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+plugins=(archlinux cp colored-man-pages composer docker docker-compose emoji git github git-flow-avh httpie ssh-agent symfony2 systemd zsh-syntax-highlighting)
 
-plugins=(cp colored-man-pages composer docker docker-compose emoji git github git-flow-avh httpie symfony2 zsh-syntax-highlighting systemd archlinux)
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities github_rsa home_ed25512
+zstyle :omz:plugins:ssh-agent lifetime 8h
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,15 +72,8 @@ export OMZSH_PLUGINS="$plugins"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="emacs -nw $XDG_CONFIG_HOME/zsh/.zshrc"
-alias zshrefresh="source $XDG_CONFIG_HOME/zsh/.zshrc $XDG_CONFIG_HOME/zsh/.zshenv /etc/zsh/zshenv"
-alias gdb="gdb -q -nh -x $XDG_CONFIG_HOME/gdb/local"
-alias ls="lsd"
-alias lt="ls --tree"
-alias emacs="emacs --dump=$XDG_CONFIG_HOME/emacs/.cache/dumps/spacemacs.pdmp"
-alias e="emacs"
-alias te="emacs -nw"
-alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
-alias tmn="tmux new -t"
-alias tml="tmux list-sessions"
-alias tma="tmux attach -d -t"
+if [ -f ~/.zsh/zshalias ]; then
+    source $XDG_CONFIG_HOME/zsh/zshalias
+else
+    print "$XDG_CONFIG_HOME/zsh/zshalias: File not found."
+fi
