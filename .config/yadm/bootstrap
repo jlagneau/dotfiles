@@ -5,7 +5,7 @@
 pushd "$HOME" > /dev/null
 
 # Yadm generate alternate files
-yadm alt > /dev/null
+yadm alt
 
 # Install required software and dependencies
 echo -e "\033[32mInstall required softwares\033[0m"

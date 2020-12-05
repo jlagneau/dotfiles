@@ -54,11 +54,7 @@ ZSH_CUSTOM=$XDG_CONFIG_HOME/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux cp colored-man-pages composer docker docker-compose emoji git github git-flow-avh httpie ssh-agent symfony2 systemd zsh-syntax-highlighting)
-
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities github_ed25519 home_ed25519
-zstyle :omz:plugins:ssh-agent lifetime 12h
+plugins=(archlinux colored-man-pages composer cp docker docker-compose emoji git github git-flow-avh gpg-agent httpie symfony2 systemd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

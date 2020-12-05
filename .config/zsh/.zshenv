@@ -9,15 +9,15 @@ export TERM=xterm-256color
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME/docker-machine"
 
-# spacemacs
-export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
-
 # less
 export LESS="-R -I -~"
 export LESSHISTFILE="/tmp/less_history"
 
 # rust
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+# spacemacs
+export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
 
 # wget
 export WGETRC="$XDG_CONFIG_HOME/wget/config"
