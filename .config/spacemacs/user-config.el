@@ -6,21 +6,36 @@ This is the place where most of your coxnfigurations should be done. Unless it i
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (use-package feature-mode
+    :mode ("\\.feature$" . feature-mode)
+    :config
+    (add-hook 'feature-mode-hook
+              (lambda ()
+                (electric-indent-mode -1))))
+
   ;; ligatures for fira mode
   (use-package fira-code-mode
     :if window-system
     :custom (fira-code-mode-disabled-ligatures '("[]" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
-    :diminish "F"
-    :hook org-mode prog-mode text-mode)
+    :hook prog-mode text-mode)
 
   ;; solaire mode
   (use-package solaire-mode
-    :if window-system
-    :hook
-    ((change-major-mode after-revert ediff-prepare-buffer) . turn-on-solaire-mode)
-    (minibuffer-setup . solaire-mode-in-minibuffer)
+    ;; Ensure solaire-mode is running in all solaire-mode buffers
+    :hook (change-major-mode . turn-on-solaire-mode)
+    ;; ...if you use auto-revert-mode, this prevents solaire-mode from turning
+    ;; itself off every time Emacs reverts the file
+    :hook (after-revert . turn-on-solaire-mode)
+    ;; To enable solaire-mode unconditionally for certain modes:
+    :hook (ediff-prepare-buffer . solaire-mode)
     :config
-    (solaire-global-mode +1))
+    ;; The bright and dark background colors are automatically swapped the first 
+    ;; time solaire-mode is activated. Namely, the backgrounds of the `default` and
+    ;; `solaire-default-face` faces are swapped. This is done because the colors 
+    ;; are usually the wrong way around. If you don't want this, you can disable it:
+    (setq solaire-mode-auto-swap-bg nil)
+    (solaire-global-mode +1)
+    (solaire-mode-swap-bg))
 
   ;; Hide mode line for specific buffers
   (use-package hide-mode-line

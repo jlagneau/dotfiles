@@ -100,7 +100,7 @@ This function should only modify configuration layer settings."
           org-enable-sticky-header t
           spaceline-org-clock-p t
           org-projectile-file "TODOs.org"
-          org-download-image-dir "~/Pictures/org/"
+          org-download-image-dir "~/Downloads/"
           org-return-follows-link t)
      pdf
      (php :variables
@@ -141,7 +141,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(fira-code-mode hide-mode-line solaire-mode try)
+   dotspacemacs-additional-packages '(feature-mode fira-code-mode hide-mode-line solaire-mode try)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -249,7 +249,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
 
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
@@ -297,7 +297,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state nil
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Fira Code"
+   dotspacemacs-default-font '("FiraCode Nerd Font Mono"
                                :size 10.0
                                :weight normal
                                :width normal)
