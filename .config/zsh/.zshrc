@@ -77,3 +77,5 @@ if [ -f $XDG_CONFIG_HOME/zsh/zshalias ]; then
 else
     print "$XDG_CONFIG_HOME/zsh/zshalias: File not found."
 fi
+
+complete -C "/usr/bin/symfony self:autocomplete" symfony
