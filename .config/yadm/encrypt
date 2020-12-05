@@ -1,4 +1,3 @@
-.ssh/*_rsa
 .ssh/*_ed25519
 .ssh/config
 .config/git/config

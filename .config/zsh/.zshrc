@@ -57,8 +57,8 @@ ZSH_CUSTOM=$XDG_CONFIG_HOME/oh-my-zsh-custom
 plugins=(archlinux cp colored-man-pages composer docker docker-compose emoji git github git-flow-avh httpie ssh-agent symfony2 systemd zsh-syntax-highlighting)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities github_rsa home_ed25519
-zstyle :omz:plugins:ssh-agent lifetime 8h
+zstyle :omz:plugins:ssh-agent identities github_ed25519 home_ed25519
+zstyle :omz:plugins:ssh-agent lifetime 12h
 
 source $ZSH/oh-my-zsh.sh
 
