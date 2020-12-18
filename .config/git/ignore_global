@@ -7,5 +7,7 @@
 a.out
 
 # IDE local files
+compile_commands.json
 .dir-locals.el
 .vs
+.cache
