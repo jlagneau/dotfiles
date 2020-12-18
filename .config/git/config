@@ -1,0 +1,42 @@
+# Base configuration
+[include]
+	path = ~/.config/git/user
+
+[core]
+	excludesfile = ~/.config/git/ignore_global
+
+[color]
+	ui = auto
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+# Aliases for git commands
+[alias]
+	cloner = clone --recurse-submodules
+
+# Config for git commands
+[commit]
+	gpgsign = true
+	verbose = true
+
+[diff]
+	submodule = log
+
+[log]
+	date=rfc
+	showSignature = true
+
+[pull]
+	rebase = true
+
+[push]
+	default = simple
+
+[status]
+	showStash = true
+	submoduleSummary = true
+
+[submodule]
+	recurse = true
+	fetchJobs = 0
