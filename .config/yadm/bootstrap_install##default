@@ -11,3 +11,4 @@ which lsd          > /dev/null || yay -S --noconfirm --quiet lsd
 which clang        > /dev/null || yay -S --noconfirm --quiet clang
 which intelephense > /dev/null || yay -S --noconfirm --quiet nodejs-intelephense
 which bat          > /dev/null || yay -S --noconfirm --quiet bat
+which tmux         > /dev/null || yay -S --noconfirm --quiet tmux
