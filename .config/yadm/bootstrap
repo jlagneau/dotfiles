@@ -18,6 +18,7 @@ cat << EOF > "$XDG_CONFIG_HOME/yadm/repo.git/info/sparse-checkout"
 /*
 !README.md
 !LICENSE
+!.gitmodules
 EOF
 
 yadm checkout --quiet
