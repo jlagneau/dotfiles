@@ -35,7 +35,7 @@ export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
 export WGETRC="$XDG_CONFIG_HOME/wget/config"
 
 # xorg
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
 
 # zsh
 export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
