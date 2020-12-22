@@ -11,7 +11,7 @@ XDG environement variable should be set.
 **/etc/zsh/zshenv**
 ```zsh
 # NVIDIA wayland EGLstreams
-export KWIN_DRM_USE_EGL_STREAMS=1
+# export KWIN_DRM_USE_EGL_STREAMS=1
 
 # XDG
 export XDG_BIN_HOME="${HOME}/.local/bin"
@@ -19,7 +19,6 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
-export XDG_RUNTIME_DIR="/run/user/${id -u $USER}"
 export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
@@ -40,6 +39,17 @@ export PATH="$XDG_BIN_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-${HOST}-${ZSH_VERSION}"
 export HISTFILE="/tmp/zsh_history"
+```
+
+If SDDM is used, change `/etc/sddm.conf.d/default.conf`
+
+```
+# ...
+
+[X11]
+# ...
+UserAuthFile=.cache/Xauthority
+# ...
 ```
 
 ## LICENSE
