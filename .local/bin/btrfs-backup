@@ -1,0 +1,29 @@
+#!/bin/bash
+now=$(date '+%Y-%m-%d_%H:%M:%S')
+keep=3 # Number of old backup to keep
+
+#
+# create backups
+#
+
+# root backup
+mkdir -p /.snapshots/root
+btrfs subvolume snapshot -r / /.snapshots/root/${now}
+# home backup
+mkdir -p /.snapshots/home
+btrfs subvolume snapshot -r /home /.snapshots/home/${now}
+
+#
+# clean old backups
+#
+nb_snapshots_root=`ls /.snapshots/root | wc -l`
+if [ ${nb_snapshots_root} -ge ${keep} ]; then
+	oldest_snapshot=`ls /.snapshots/root | sort | head -n 1`
+	btrfs subvolume delete /.snapshots/root/${oldest_snapshot}
+fi
+
+nb_snapshots_home=`ls /.snapshots/home | wc -l`
+if [ ${nb_snapshots_home} -ge ${keep} ]; then
+	oldest_snapshot=`ls /.snapshots/home | sort | head -n 1`
+	btrfs subvolume delete /.snapshots/home/${oldest_snapshot}
+fi
