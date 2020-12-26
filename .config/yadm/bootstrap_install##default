@@ -1,14 +1,27 @@
 #!/bin/zsh
 
-# Install basic packages
-which gpg          > /dev/null || yay -S --noconfirm --quiet gpg
-which wget         > /dev/null || yay -S --noconfirm --quiet wget
-which htop         > /dev/null || yay -S --noconfirm --quiet htop
-which gotop        > /dev/null || yay -S --noconfirm --quiet gotop
-which r2           > /dev/null || yay -S --noconfirm --quiet radare2
-which emacs        > /dev/null || yay -S --noconfirm --quiet emacs
-which lsd          > /dev/null || yay -S --noconfirm --quiet lsd
-which clang        > /dev/null || yay -S --noconfirm --quiet clang
-which intelephense > /dev/null || yay -S --noconfirm --quiet nodejs-intelephense
-which bat          > /dev/null || yay -S --noconfirm --quiet bat
-which tmux         > /dev/null || yay -S --noconfirm --quiet tmux
+# Basic packages to install
+packages=(
+	'bat'
+	'docker'
+	'docker-compose'
+	'dotacat'
+	'gotop'
+	'gpg'
+	'htop'
+	'lsd'
+	'neofetch'
+	'rustup'
+	'tmux'
+	'wget'
+)
+
+# On a non headless machine
+if [[ ! -z $DISPLAY ]]; then
+	packages+=('clang' 'emacs' 'intelephense')
+fi
+
+# Loop through the packages and install those that aren't found
+for p in $packages;
+	do which ${p} > /dev/null || yay -S --noconfirm --quiet ${p}
+done
