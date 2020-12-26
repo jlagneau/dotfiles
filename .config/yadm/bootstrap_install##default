@@ -6,8 +6,8 @@ packages=(
 	'docker'
 	'docker-compose'
 	'dotacat'
+	'gnupg'
 	'gotop'
-	'gpg'
 	'htop'
 	'lsd'
 	'neofetch'
@@ -18,10 +18,10 @@ packages=(
 
 # On a non headless machine
 if [[ ! -z $DISPLAY ]]; then
-	packages+=('clang' 'emacs' 'intelephense')
+	packages+=('clang' 'emacs' 'nodejs-intelephense' 'radare2' 'radare2-cutter')
 fi
 
 # Loop through the packages and install those that aren't found
 for p in $packages;
-	do which ${p} > /dev/null || yay -S --noconfirm --quiet ${p}
+	do yay -Qi ${p} > /dev/null || yay -S --noconfirm --quiet ${p}
 done
