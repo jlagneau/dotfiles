@@ -11,17 +11,28 @@ packages=(
 	'htop'
 	'lsd'
 	'neofetch'
-	'rustup'
 	'tmux'
 	'wget'
 )
 
-# On a non headless machine
+# extra packages to install on a desktop
+extra_packages=(
+	'clang'
+	'emacs'
+	'hub'
+	'gitflow-avh'
+	'nodejs-intelephense'
+	'radare2'
+	'radare2-cutter'
+	'rustup'
+	'symfony-cli'
+)
+
 if [[ ! -z $DISPLAY ]]; then
-	packages+=('clang' 'emacs' 'nodejs-intelephense' 'radare2' 'radare2-cutter')
+	packages+=(${extra_packages})
 fi
 
 # Loop through the packages and install those that aren't found
 for p in $packages;
-	do yay -Qi ${p} > /dev/null || yay -S --noconfirm --quiet ${p}
+	do yay -Qi ${p} &> /dev/null || yay -S --noconfirm --quiet ${p}
 done
