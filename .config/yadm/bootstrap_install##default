@@ -2,21 +2,28 @@
 
 # Basic packages to install
 packages=(
+	'aspell'
+	'aspell-en'
 	'bat'
+	'bottom-bin'
 	'docker'
 	'docker-compose'
 	'dotacat'
 	'gnupg'
-	'gotop'
 	'htop'
-	'lsd'
+	'lsd-bin'
 	'neofetch'
 	'tmux'
 	'wget'
 )
 
-# extra packages to install on a desktop
-extra_packages=(
+# packages to install on a headless server
+headless_packages=(
+	'emacs-nox'
+)
+
+# packages to install on a desktop
+desktop_packages=(
 	'clang'
 	'emacs'
 	'hub'
@@ -28,8 +35,11 @@ extra_packages=(
 	'symfony-cli'
 )
 
-if [[ ! -z $DISPLAY ]]; then
-	packages+=(${extra_packages})
+# has a display
+if [[ -z $DISPLAY ]]; then
+	packages+=(${headless_packages})
+else
+	packages+=(${desktop_packages})
 fi
 
 # Loop through the packages and install those that aren't found
