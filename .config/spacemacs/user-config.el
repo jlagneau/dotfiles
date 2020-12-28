@@ -16,7 +16,7 @@ you should place your code here."
   ;; ligatures for fira mode
   (use-package fira-code-mode
     :if window-system
-    :custom (fira-code-mode-disabled-ligatures '("[]" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
+    :custom (fira-code-mode-disabled-ligatures '("[]" "x")) ;; List of ligatures to turn off
     :hook prog-mode text-mode)
 
   ;; solaire mode
