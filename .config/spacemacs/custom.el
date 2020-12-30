@@ -9,6 +9,7 @@
  '(cursor-in-non-selected-windows nil nil nil "Don't display cursor in non focused windows.")
  '(evil-want-Y-yank-to-eol nil)
  '(exec-path-from-shell-check-startup-files nil nil nil "Disable warning for shell startup files.")
+ '(global-hl-line-sticky-flag t)
  '(helm-mode t)
  '(lsp-intelephense-files-exclude
    ["**/.git/**" "**/.svn/**" "**/.hg/**" "**/CVS/**" "**/.DS_Store/**" "**/node_modules/**" "**/bower_components/**"])
@@ -28,6 +29,7 @@
  '(git-gutter+-added ((t (:background "#9ac334" :foreground "#9ac334"))))
  '(git-gutter+-deleted ((t (:background "#e74c3c" :foreground "#e74c3c"))))
  '(git-gutter+-modified ((t (:background "#66d9ef" :foreground "#66d9ef"))))
+ '(line-number-current-line ((t (:inherit (hl-line default) :background "#222323" :foreground "#cfc0c5" :strike-through nil :underline nil :slant normal :weight normal))))
  '(mode-line-inactive ((t (:background "#1c1e1f" :foreground "#1c1e1f" :box nil))))
  '(origami-fold-header-face ((t (:box (:line-width 1 :color "gray14") :background unspecified))) nil "Style of the box around folded content line.")
  '(solaire-mode-line-inactive-face ((t (:background "#1c1e1f" :foreground "#556172"))))
