@@ -5,6 +5,7 @@ packages=(
 	'aspell'
 	'aspell-en'
 	'bat'
+	'bandwhich'
 	'bottom-bin'
 	'docker'
 	'docker-compose'
