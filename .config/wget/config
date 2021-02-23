@@ -1,0 +1,3 @@
+# disable wget history
+hsts=0
+
