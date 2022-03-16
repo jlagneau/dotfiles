@@ -1,3 +1,6 @@
+function mkcd() { mkdir -p "$@" && cd "$_"; }
+function emacsdisown() { emacs "$@" & disown; }
+
 # alias for my zsh config
 alias zshconfig="emacs -nw $XDG_CONFIG_HOME/zsh/.zshrc"
 alias zshrefresh="source $XDG_CONFIG_HOME/zsh/.zshrc $XDG_CONFIG_HOME/zsh/.zshenv /etc/zsh/zshenv"
@@ -5,10 +8,12 @@ alias gdb="gdb -q -nh -x $XDG_CONFIG_HOME/gdb/local"
 alias cat="bat"
 alias ls="lsd"
 alias lt="ls --tree"
-alias emacs="emacs --dump=$XDG_CONFIG_HOME/emacs/.cache/dumps/spacemacs.pdmp"
-alias e="emacs"
+#alias emacs="emacs --dump=$XDG_CONFIG_HOME/emacs/.cache/dumps/spacemacs-27.2.pdmp"
+alias e="emacsdisown"
 alias te="emacs -nw"
 alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias tmn="tmux new -t"
 alias tml="tmux list-sessions"
 alias tma="tmux attach -d -t"
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+alias mkcd="mkcd"

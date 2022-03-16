@@ -1,5 +1,5 @@
 # base configuration
-export PATH="$XDG_BIN_HOME:$XDG_DATA_HOME/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
+export PATH="$XDG_BIN_HOME:$XDG_DATA_HOME/cargo/bin:$XDG_DATA_HOME/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 export LANG=en_US.UTF-8
 export EDITOR="emacs -nw"
 export PAGER=less

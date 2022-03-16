@@ -14,8 +14,8 @@ blocks:
 #  - inode
   - user
   - group
-#  - size
-#  - size_value
+  - size
+  - size_value
   - date
   - name
 

@@ -6,6 +6,13 @@ This is the place where most of your coxnfigurations should be done. Unless it i
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (setq create-lockfiles nil)
+
+  (use-package editorconfig
+    :ensure t
+    :config
+    (editorconfig-mode 1))
+
   (use-package feature-mode
     :mode ("\\.feature$" . feature-mode)
     :config
@@ -20,24 +27,11 @@ you should place your code here."
     :hook prog-mode text-mode)
 
   ;; solaire mode
-  (use-package solaire-mode
-    ;; Ensure solaire-mode is running in all solaire-mode buffers
-    :hook (change-major-mode . turn-on-solaire-mode)
-    ;; ...if you use auto-revert-mode, this prevents solaire-mode from turning
-    ;; itself off every time Emacs reverts the file
-    :hook (after-revert . turn-on-solaire-mode)
-    ;; To enable solaire-mode unconditionally for certain modes:
-    :hook (ediff-prepare-buffer . solaire-mode)
-    :config
-    ;; The bright and dark background colors are automatically swapped the first 
-    ;; time solaire-mode is activated. Namely, the backgrounds of the `default` and
-    ;; `solaire-default-face` faces are swapped. This is done because the colors 
-    ;; are usually the wrong way around. If you don't want this, you can disable it:
-    (setq solaire-mode-auto-swap-bg nil)
-    (solaire-global-mode +1)
-    (solaire-mode-swap-bg))
+;  (use-package solaire-mode
+;    :config
+;    (solaire-global-mode +1))
 
-  ;; Hide mode line for specific buffers
+  ;; ;; Hide mode line for specific buffers
   (use-package hide-mode-line
     :hook
     ((fundamental-mode spacemacs-buffer-mode treemacs-mode) . hide-mode-line-mode))
@@ -47,6 +41,12 @@ you should place your code here."
 
   ;; treemacs icons size
   (treemacs-resize-icons 18)
+
+  ;; Hide cursor in PDFview
+  (add-hook 'pdf-view-mode-hook
+            (lambda ()
+              (pdf-view-themed-minor-mode t)
+              (pdf-view-fit-height-to-window)))
 
   ;; Compilation buffer.
   (require 'ansi-color)

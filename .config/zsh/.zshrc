@@ -56,7 +56,7 @@ ZSH_CUSTOM=$XDG_CONFIG_HOME/oh-my-zsh-custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(archlinux colored-man-pages composer cp docker docker-compose git gpg-agent systemd tmux zsh-syntax-highlighting)
 if [[ ! -z $DISPLAY ]]; then
-    plugins+=(emoji github git-flow-avh npm rust rustup symfony2)
+    plugins+=(emoji github git-flow-avh npm rust symfony2)
 fi
 
 source $ZSH/oh-my-zsh.sh
