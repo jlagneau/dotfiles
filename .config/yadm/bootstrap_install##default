@@ -6,41 +6,31 @@ packages=(
 	'aspell-en'
 	'bat'
 	'bandwhich'
-	'bottom-bin'
+	'bottom'
 	'docker'
 	'docker-compose'
 	'dotacat'
+    'emacs-git'
 	'gnupg'
 	'htop'
-	'lsd-bin'
+	'lsd'
 	'neofetch'
-	'procs-bin'
+	'procs'
 	'tmux'
 	'wget'
 )
 
-# packages to install on a headless server
-headless_packages=(
-	'emacs-nox'
-)
-
 # packages to install on a desktop
 desktop_packages=(
-	'clang'
-	'emacs'
 	'hub'
 	'gitflow-avh'
 	'nodejs-intelephense'
-	'radare2'
-	'radare2-cutter'
 	'rustup'
 	'symfony-cli'
 )
 
 # has a display
-if [[ -z $DISPLAY ]]; then
-	packages+=(${headless_packages})
-else
+if [[ ! -z $DISPLAY ]]; then
 	packages+=(${desktop_packages})
 fi
 
