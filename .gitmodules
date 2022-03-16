@@ -15,5 +15,4 @@
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
 [submodule ".config/emacs"]
 	path = .config/emacs
-	url = git@github.com:syl20bnr/spacemacs.git
-	branch = develop
+	url = git@github.com:jlagneau/emacs.git
