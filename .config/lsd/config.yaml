@@ -15,7 +15,6 @@ blocks:
   - user
   - group
   - size
-  - size_value
   - date
   - name
 
